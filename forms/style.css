@@ -1,0 +1,155 @@
+/*------UDR COLORS----------|
+|  011627 -- DK. Blue       |
+|  FDFFFC -- Powder         |
+|  2EC4B6 -- Turquoise      |
+|  E71D36 -- Red Rose       |
+|  FF9F1C -- Orange Peel    |
+|==========================*/
+
+
+html, body * {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background:#011627;
+    color: #FDFFFC;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+fieldset {
+    border: 1px solid #93a6b5;
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+fieldset legend {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: .85em;
+    background: #2EC4B6;
+    color: #012627;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.formContainer {
+    background: #FDFFFC;
+    color: #011627;
+    margin: 20px;
+    padding: 10px;
+    max-width: 700px;
+}
+.formContainer form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.udr-form h3 {
+    font-size: 16px;
+}
+
+.optional:after {
+    content: '♢';
+    color: #FF9F1C;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 4px;
+}
+
+.udr-form button {
+    background: #E71D36;
+    color: #FDFFFC;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 15px;
+    width: 100%;
+    display: block;
+    margin: 2px auto;
+}
+.udr-form button:hover {
+    background: #2EC4B6;
+}
+
+.fs-ApplicationAgreement p {
+    padding: 10px;
+    background: rgb(46 196 182 / 37%);
+}
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 3px;
+    width: 14px;
+}
+textarea, input[type="text"], select,
+input[type="email"], input[type="phone"] {
+    display:block;
+    width: 100%;
+    padding: 3px 0;
+    margin-bottom: 4px;
+}
+
+.udr-form span {
+    transition: all .4s ease-in-out;
+    padding: 10px;
+    display: block;
+    overflow: hidden;
+}
+
+.fs-hidden {
+    background: transparent;
+    max-height: 0px;
+    position: absolute;
+    top: -999px;
+}
+.fs-visible{
+    background:#e4e6e4;
+    max-height: 800px;
+}
+
+.fs-2-col, .fs-3-col {
+    word-wrap: break-word;
+}
+.fs-2-col {
+    display: inline-block;
+    width: calc(50% - 6px);
+}
+.fs-3-col {
+    display: inline-block;
+    width: calc(33.333% - 6px);
+}
+.col-left {
+    margin-right:6px;
+}
+.col-right {
+    margin-left: 6px;
+}
+.col-mid {
+    margin: 0 3px;
+}
+label::before{
+    content:'';
+    clear:both;
+}
+.udr-form .agreement {
+    background:#e9e9e9;
+    color: #011627;
+    line-height: 1.15;
+    padding: 10px;
+    max-height: 400px;
+    overflow: scroll;
+}
+.udr-form .agreement li {
+    margin-left: 20px;
+}
+.volunteer-positions label {
+    display: inline-block;
+    margin-right: 10px;
+}

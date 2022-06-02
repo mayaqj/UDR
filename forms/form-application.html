@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>• UDR Adoption Application</title>
+    <meta charset="utf-8" name="United Doberman Rescue | Adoption Form">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;0,900;1,100;1,400;1,600;1,700;1,900&family=Roboto:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+</head>
+<body>
+    
+<div class="formContainer">
+<form id="form_Adoption" class="udr-form">
+<h1>UDR Adoption Application</h1>
+<h3>Fields marked with ♢ are <i>optional</i>.</h3>
+
+    <!-- Applicant Information -->
+    <fieldset class="form-fs">
+    <legend>Applicant Information</legend>
+        <div class="fs-2-col col-left">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div><div class="fs-2-col col-right">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required>
+        
+        <div class="fs-3-col col-left">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+        </div><div class="fs-3-col col-mid">
+            <label for="State">State / Province</label>
+            <input type="text" id="State" name="State" required>
+        </div><div class="fs-3-col col-right">
+            <label for="zip">Zip / Postal Code</label>
+            <input type="text" id="zip" name="zip" required>
+        </div>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required>
+
+        <div class="fs-2-col col-left">
+            <label for="phoneDay">Day Phone</label>
+            <input type="text" id="phoneDay" name="phoneDay" required>
+        </div><div class="fs-2-col col-right">
+            <label for="phoneAlt" class="optional">Alternate Phone</label>
+            <input type="text" id="phoneAlt" name="phoneAlt">
+        </div>
+
+        <input type="checkbox" name="updateContact" id="updateContact">
+        <label for="updateContact" class="optional">Yes, update my saved contact info</label>
+
+    </fieldset>
+
+    <!-- Household Information -->
+    <fieldset class="form-fs">
+    <legend>HouseHold</legend>
+        <label for="household">Please list the <b>full names</b> (first middle and last) <b>and ages</b> of all human adults and/or children living in the home. Please list all individuals that will reside with the dog at any time, including shared custody arrangements. (Note: All individuals that will reside with the dog must be present at the time of the home visit.)</label>
+        <textarea id="household" name="household" rows="4" required></textarea>
+
+        <label for="primaryCaretaker">Who in the household will care for the pet?</label>
+        <input type="text" id="primaryCaretaker" name="primaryCaretaker" required>
+    </fieldset>
+
+    <!-- Residence Information -->
+    <fieldset class="form-fs">
+    <legend>Residence</legend>
+        <label for="homeType" class="optional">What type of home will the pet be living?</label>
+        <select id="homeType" name="homeType">
+            <option>Choose a Type:</option>
+            <option value="House">Single Family Home</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Townhouse">Townhouse</option>
+            <option value="Condo">Condo</option>
+            <option value="Duplex">Duplex</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <p for="ownRent">Do you own or rent the residence?</p>
+            <input type="radio" name="ownRent" id="homeOwner" value="Owns Residence">
+            <label for="homeOwner">I own my home</label>
+            <input type="radio" name="ownRent" id="homeRenter" value="Rents Residence" class="trigger">
+            <label for="homeRenter">I rent my home</label>
+            <input type="radio" name="ownRent" id="homeOther" value="Does not rent or Own">
+            <label for="homeOther">N/A</label>
+            
+            <!-- Toggle OwnRent -->
+            <span class="fs-hidden" id="ownRent_toggle">
+                <label for="rentInfo">If you rent, please provide the name and phone infomration of the landlord or property owner to verify pet approval and renal insurance. Failure to provide this information will deny your application.</label>
+                <textarea id="rentInfo" name="rentInfo" rows=2 required></textarea>
+            </span><br>
+
+            <label for="WhileNotAtHome">Where will the animal be kept when you <em>are not</em> at home?</label>
+            <input type="text" id="whileNotAtHome" name="whileNotAtHome" required>
+            <label for="whileAtHome">Where will the animal be kept when you <em>are</em> at home?</label>
+            <input type="text" id="whileAtHome" name="whileAtHome" required>
+            <label for="sleepingArrangements">Where will the animal sleep?</label>
+            <input type="text" id="sleepingArrangements" name="sleepingArrangements" required>
+
+            <label for="fence">What type of fence do you have?</label>
+            <select id="fence" name="fence">
+                <option>Type of Fence:</option>
+                <option value="None">No Fence</option>
+                <option value="Chain-link">Chain Link</option>
+                <option value="Invisible">Invisible</option>
+                <option value="Partial">Partial Fence</option>
+                <option value="Privacy">Privacy Fence</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="fenceInfo">What is <b>the height</b> of the fence? And <b>if no fence</b>, please explain your plan in detail how the dog will be allowed to bathroom and play outside.</label>
+            <textarea id="fenceInfo" name="fenceInfo" required rows=2></textarea>
+    </fieldset>
+
+    <!-- Current/Previous Pets Information -->
+    <fieldset class="form-fs">
+    <legend>Current/Previous Pets</legend>
+        <p for="ownedPets">Do you currently have pets or have owned pets in the past?</p>
+        <input type="radio" name="ownedPets" id="ownedPetsTrue" value="Has owned pets" class="trigger"><label for="ownedPetsTrue">Yes</label>
+        <input type="radio" name="ownedPets" id="ownedPetsFalse" value="Has not owned pets"><label for="ownedPetsFalse">No</label>
+
+        <!-- OwnedPets Toggle -->
+        <span class="fs-hidden" id="ownedPets_toggle">
+            <label for="currentPets">Please list all current types of pets in the home:</label>
+            <textarea id="currentPets" name="currentPets" placeholder="Example: Dog named Lucy 5 years old, spayed"></textarea required>
+
+            <label for="spayNeutered">Are current or past pets, both cats and dogs, spayed/neutered? If not, please explain why it was not done.</label>
+            <textarea id="spayNeutered" name="spayNeutered" required></textarea>
+
+            <label for="heartworm">Do you use a monthly Heart Worm preventative for your current or past pets? If so, please name the product used. Write NA if you do not or have never used heart worm in the past.</label>
+            <input type="text" id="heartworm" name="heartworm" required>
+
+            <label for="pastSurrender" class="optional">Have you ever surrendered a pet you have owned in the past? If yes, please explain:</label><textarea id="pastSurrender" name="pastSurrender"></textarea>
+
+            <label for="previousPets">Please list all past or previous pets. Explain in detail what happened to each pet.</label><textarea id="previousPets" name="previousPets" required></textarea>
+        </span><br>
+        <label for="vetInfo">Please provide the name, address and phone number of both current and all previous pets you have owned. If you have never owned a pet and want to adopt, provde the name of the vet you plan on using in the futre. (<b>Note:</b> Vet info is required. Failure to provide vet information may delay the application process.)</label>
+        <textarea id="vetInfo" name="vetInfo" required></textarea>
+    </fieldset>
+
+    <!-- Future Pet Affinity/Preparedness Information -->
+    <fieldset class="form-fs">
+    <legend>Future Pet Affinity/Preparedness</legend>
+        <label for="whyNow">Why are you interested in adopting a Doberman/dog at this time?</label>
+        <input type="text" id="whyNow" name="whyNow" required>
+
+        <label for="desiredTraits">What are you looking for in a Doberman/dog? Color, age, sex, activity level, specific looks, cat savvy, good with children, barker, non-barker, etc: Be specific!</label>
+        <textarea id="desiredTraits" name="desiredTraits" required></textarea>
+
+        <label for="activities" class="optional">What types of activities are you looking for doing with your new dogs? Walking, hiking, camping, swimming, watching TV, relaxing, staying at home, couch potato?</label>
+        <textarea id="activities" name="activities"></textarea>
+
+        <p for="formalTraining">Are you willing to take your new dog to formal training classes?</p>
+            <input type="radio" id="formalTrainingTrue" name="formalTraining" value="Will formal train">
+            <label for="formalTrainingTrue">Yes</label>
+            <input type="radio" id="formalTrainingFalse" name="formalTraining" value="No formal training" class="trigger">
+            <label for="formalTrainingFalse">No</label>
+            <input type="radio" id="formalTrainingOther" name="formalTraining" value="Other formal training" class="trigger">
+            <label for="formalTrainingOther">Other</label>
+            
+        <!-- FormalTraining Toggle -->
+        <span class="fs-hidden" id="formalTraining_toggle">
+            <label for="formalTrainingInfo">Why not, or what reasons for other?</label>
+            <input type="text" id="formalTrainingInfo" name="formalTrainingInfo">
+        </span><br>
+
+        <label for="timeAlone">How much time will the animal spend alone during the day?</label>
+        <input type="text" id="timeAlone" name="timeAlone" required>
+
+        <label for="willingToCrateInfo">Are you willing to crate your new dog? Please explain why or why not:</label>
+        <input type="text" id="willingToCrateInfo" name="willingToCrateInfo" required>
+
+        <label for="futureHandling">How do you plan to give structure to your new pet? What activities will you do with your new pet? How will you discipline?</label>
+        <textarea id="futureHandling" name="futureHandling" required></textarea>
+
+        <label for="challenges" class="optional">Please list any reasons or challenges, personal or otherwise, why you may not be able to keep a dog.</label>
+        <textarea id="challenges" name="challenges" rows="3"></textarea>
+
+        <label for="chosenPet">Which animal are you interested in? <i>Based off all information provided and our intervidw process, we try to match the appropriate pet for the home. It is our goal to place the right pet in the home that best fit for both the applicant and the animal. We may recommend a different pet based off what we find during the interview process.</i></label>
+        <select id="chosenPet" name="chosenPet" required>
+            <option value="">Choose an animal:</option>
+            <option value="animal1">Zara</option>
+            <option value="animal2">Boston</option>
+            <option value="animal3">Cuca</option>
+            <option value="animal4">Dunkin</option>
+            <option value="animal5">Jasmine</option>
+            <option value="animal6">Louis</option>
+            <option value="animal7">Rebound</option>
+            <option value="animal8">Sophie</option>
+            <option value="animal9">Taz</option>
+            <option value="Other Pet">Other pet not listed</option>
+        </select>
+    </fieldset>
+
+    <!-- Etc Information -->
+    <fieldset class="form-fs">
+    <legend>Etc</legend>
+        <label for="references">Please list at least one non-family reference and their contact information:</label>
+        <textarea id="references" name="references" required
+        placeholder="Jane Doe, family friend of 3 years, 555-555-5555."></textarea>
+
+        <label for="employment">Where are you employed and for how long have you worked there?</label>
+        <input type="text" id="employment" name="employment" required>
+
+        <p for="otherRescues" class="optional">Have you applied with any other rescue group?</p>
+            <input type="radio" name="otherRescues" id="otherRescuesTrue" value="Applied to other Rescue" class="trigger">
+            <label for="otherRescuesTrue">Yes</label>
+            <input type="radio" name="otherRescues" id="otherRescuesFalse" value="Has not applied to other rescues">
+            <label for="otherRescuesFalse">No</label>
+            
+            <!-- Other Rescues Toggle -->
+            <span class="fs-hidden" id="otherRescues_toggle">
+                <label for="otherRescuesInfo">Which one(s) did you apply to?</label>
+                <input type="text" id="otherRescuesInfo" name="otherRescuesInfo">
+            </span><br>
+
+        <label for="discovery" class="optional">How did you hear about us?</label>
+        <input type="text" id="discovery" name="discovery" placeholder="Facebook, Google, Friend, etc">
+
+        <p for="crime" class="optional">Have you ever been charged or convicted of a crime - either misdemeanor or felony?</p>
+            <input type="radio" name="crime" id="crimeTrue" value="Yes" class="trigger"><label for="crimeTrue">Yes</label>
+            <input type="radio" name="crime" id="crimeFalse" value="No" ><label for="crimeFalse">No</label>
+            
+            <!-- Crime Toggle -->
+            <span class="fs-hidden" id="crime_toggle">
+                <label for="crimeInfo">Please describe:</label>
+                <textarea id="crimeInfo" name="crimeInfo"></textarea>
+            </span><br>
+
+        <label for="additionalInfo" class="optional">Please share any additional information you feel would be helpful and that we should take into consideration</label>
+        <textarea id="additionalInfo" name="additionalInfo"></textarea>
+    </fieldset>
+
+    <!-- Application Fee -->
+    <fieldset class="form-fs">
+    <legend>Application Fee</legend>
+        <p>a streamlined way of processing application fees is coming soon; for now please use the old way of submitting your application fee as outlined below</p>
+    </fieldset>
+
+    <!-- Application Agreement Information -->
+    <fieldset class="form-fs">
+    <legend>Application Agreement</legend>
+        <ul class="agreement">
+            <li>By submitting this form and signing my name below, I certify that the information provided is true and correct. United Doberman Rescue reserves the right to refuse adoption of any Doberman/dog in its program for any reason.</li>
+            
+            <li>I understand there is a <b>$20.00 non-refundable application fee</b> to submit this application, which will be applied to the adoption fee only if I am approved to adopt.</li>
+            
+            <li>I understand filling out the application and paying the fee does not mean I will automatically be approved to adopt.</li>
+            
+            <li>I have read all adoption requirements before filling out this application and agree I qualify to adopt a dog from UDR.</li>
+            
+            <li>I understand UDR will contact my vet to ensure my current and past pets are fully vetted and current on vaccines, are on heart worm preventative and are all spayed and neutered. Failure to give accurate vet info will close my application.</li>
+            
+            <li>I agree that the Doberman/dog I adopt will not be used for breeding purposes, and will be altered by 6 months of age if adopted when a puppy. There is no exception to this rule.</li>
+            
+            <li>I agree that if I cannot keep the Doberman/dog for any reason, I will return it to United Doberman Rescue immediately, forfeiting any adoption donation.</li>
+            
+            <li>I give the right to United Doberman Rescue and Canine Castaways of Minnesota (“UDR”) to contact and obtain information from my current and past vets, and any references listed to verify my suitability as a dog owner.</li>
+            
+            <li>All information provided to UDR volunteers will be held confidential and may not be used or shared for any other purpose without my permission.</li>
+            
+            <li>I understand UDR is 100% volunteer and I will stay in contact and respond to all calls and emails from the volunteers who reach out to me. Failure to provide an accurate email or phone number, or respond in a timely manner to the UDR volunteers will close my application.</li>
+            
+            <li>I hereby release from liability, UDR and its representative from seeking, gathering and using such information, and all other persons, corporations or organizations for furnishing such information.</li>
+        </ul>
+
+        <input id="hasAgreed" type="checkbox" name="hasAgreed" required><label for="hasAgreed"><em><strong>I have read this adoption application and the adoption requirements in its entirety and have understood and answered each question to the best of my ability and agree to the terms and conditions.</strong></em></label>
+
+        
+        <p>Upon submitting this form, you will be redirected to our "Online Store" to pay a <b>$20 NON-Refundable</b> application fee, which will be applied to the adoption fee should you adopt. If you do not adopt, are denied, or adopt elsewhere, this $20 application fee is considered a donation and will not be returned. Once you are in the online store, please select the "Adoption Application Fee" product, put it in your shopping cart, and check out through PayPal.</p>
+    </fieldset>
+
+
+
+<button type="submit" onclick="validateSubmit()">Submit Application</button>
+</form>
+</div>
+
+<script type="text/javascript" src="forms.js"></script>
+</body>
+</html>
